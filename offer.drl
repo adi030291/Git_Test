@@ -1,0 +1,26 @@
+package KieRule;
+import com.sample.drools.vo.Product;
+
+rule "cc"
+
+when
+productObject : Product(productType=="cc" && purchaseAmount>10000);
+then
+productObject.setDiscount(15);
+end;
+
+rule "dc"
+
+when
+productObject : Product(productType=="dc" && purchaseAmount>15000);
+then
+productObject.setDiscount(8);
+end;
+
+rule "loan"
+
+when
+productObject : Product(productType=="loan" && purchaseAmount>15000);
+then
+productObject.setDiscount(15);
+end;
